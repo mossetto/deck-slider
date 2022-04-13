@@ -1,4 +1,4 @@
-# deck-slider
+# Deck Slider
 Resposive Decks Slider - Vanilla Js &amp; SASS - not libraries
 
 Live test:
