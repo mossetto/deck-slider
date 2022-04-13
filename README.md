@@ -2,4 +2,4 @@
 Resposive Decks Slider - Vanilla Js &amp; SASS - not libraries
 
 Live test:
-mossetto.com/deck-slider
+www.mossetto.com/deck-slider
