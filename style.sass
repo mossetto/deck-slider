@@ -1,0 +1,107 @@
+body,
+html
+    height: 100%
+
+*
+    box-sizing: border-box
+    padding: 0
+    margin: 0
+body
+    height: 100vh
+    background-color: white
+    display: flex
+    justify-content: center
+    align-items: center
+    display: flex
+    flex-direction: column
+
+.slider
+    display: flex
+    flex-wrap: wrap
+    position: relative
+    gap: 25px
+
+    @media (min-width: 1200px)
+        max-width: 1440px
+
+    @media (max-width: 1200px)
+        max-width: 768px
+
+    @media (max-width: 576px)
+        max-width: 350px
+
+    &.one-card
+        .start-deck
+            opacity: 0
+            transform: translate(-15px, 0px)
+
+    &__slide
+        color: white
+        height: 300px
+        width: 250px
+        border-radius: 10px
+        position: absolute
+
+        &.slide-visible
+            position: initial
+            z-index: 1
+            -webkit-box-shadow: 3px 3px 11px 0px rgba(0,0,0,0.25)
+            box-shadow: 3px 3px 11px 0px rgba(0,0,0,0.25)
+
+            &.next-transition
+                animation: next
+
+                @keyframes next
+                    0%
+                        transform: translateX(0)
+
+                    100%
+                        transform: translateX(calc( -100% - 25px ))
+
+            &.prev-transition
+
+                animation: prev
+                @keyframes prev
+                    0%
+                        transform: translateX(0)
+
+                    100%
+                        transform: translateX(calc( 100% + 25px ))
+
+        &.end-deck
+            transform: translate(15px, 15px)
+            right: 0
+
+        &.start-deck
+            transform: translate(-15px, 15px)
+            left: 0
+
+    &__control
+        margin-top: 30px
+        display: flex
+        column-gap: 10px
+
+        &.prev, &.next
+            height: 30px
+            width: 30px
+            background-color: white
+            border: 1px solid grey
+            border-radius: 50px
+            cursor: pointer
+        &.disable
+
+            &.prev, &.next
+                pointer-events: none
+
+                border: 1px solid lightgrey
+
+        &.wait-transition
+            pointer-events: none
+
+            &.prev, &.next
+                border: 1px solid lightgrey
+img
+    width: 100%
+    height: 100%
+    object-fit: cover
+    border-radius: 10px
