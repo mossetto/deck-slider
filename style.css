@@ -65,7 +65,7 @@ body {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-100% - 25px));
+    transform: translateX(calc( -100% - 25px ));
   }
 }
 .slider__slide.slide-visible.prev-transition {
@@ -76,7 +76,7 @@ body {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(100% + 25px));
+    transform: translateX(calc( 100% + 25px ));
   }
 }
 .slider__slide.end-deck {

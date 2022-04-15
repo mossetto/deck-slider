@@ -55,9 +55,9 @@ function initClassNamming() {
         slide.classList.remove('end-deck');
         slide.classList.remove('start-deck');
         slide.style.removeProperty('z-index');
-
-        slide.style.transition = speedSweep / 1000 + 's';
-        slide.style.animationDuration = speedSweep / 1000 + 's';
+        
+        slide.style.transition = speedSweep / 980 + 's';
+        slide.style.animationDuration = speedSweep / 980 + 's';
 
         // asignamos clase de slider a todas las cards
         slide.classList.add('slider__slide')
@@ -150,9 +150,6 @@ function disableControl() {
     let startdeck = slider.querySelectorAll('.start-deck');
     let enddeck = slider.querySelectorAll('.end-deck');
 
-    console.log(startdeck.length)
-
-
     if (startdeck.length <= 0) {
 
         document.querySelector('.prev').classList.add('disable');
@@ -180,7 +177,6 @@ function nextClicked() {
 
     let visibles = slider.querySelectorAll('.slide-visible');
     let enddeck = slider.querySelectorAll('.end-deck');
-
 
     // Animacion a ultimos 3 visibles
     visibles.forEach((visible, index) => {
@@ -261,6 +257,5 @@ function prevClicked() {
         orderIndexEnddeck();
 
     }, speedSweep);
-
 
 }
